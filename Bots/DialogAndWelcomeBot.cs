@@ -32,7 +32,7 @@ namespace DignityCoreBot.Bots
                 // To learn more about Adaptive Cards, see https://aka.ms/msbot-adaptivecards for more details.
                 if (member.Id != turnContext.Activity.Recipient.Id)
                 {
-                    var welcomeCard = CreateAdaptiveCardAttachment();
+                    var welcomeCard = CreateAdaptiveCardAttachment("welcomeCard.json");
                     var response = MessageFactory.Attachment(welcomeCard, ssml: "Welcome to Bot Framework!");
                     await turnContext.SendActivityAsync(response, cancellationToken);
                     await Dialog.RunAsync(turnContext, ConversationState.CreateProperty<DialogState>("DialogState"), cancellationToken);
@@ -41,9 +41,9 @@ namespace DignityCoreBot.Bots
         }
 
         // Load attachment from embedded resource.
-        private Attachment CreateAdaptiveCardAttachment()
+        public Attachment CreateAdaptiveCardAttachment(string cardName)
         {
-            var cardResourcePath = GetType().Assembly.GetManifestResourceNames().First(name => name.EndsWith("welcomeCard.json"));
+            var cardResourcePath = GetType().Assembly.GetManifestResourceNames().First(name => name.EndsWith(cardName));
 
             using (var stream = GetType().Assembly.GetManifestResourceStream(cardResourcePath))
             {

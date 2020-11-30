@@ -13,29 +13,18 @@
       "spacing": "medium",
       "size": "default",
       "weight": "bolder",
-      "text": "Welcome to Dignity Bot!",
-      "wrap": true,
-      "maxLines": 0
-    },
-    {
-      "type": "TextBlock",
-      "size": "default",
-      "isSubtle": true,
-      "text": "What would like me to help you with?.",
+      "text": "Welcome to Dignity Bot! Hello humankindness",
       "wrap": true,
       "maxLines": 0
     }
-  ],
-  "actions": [
-    {
-      "type": "Action.OpenUrl",
-      "title": "Book an Appointment",
-      "url": "https://docs.microsoft.com/en-us/azure/bot-service/?view=azure-bot-service-4.0"
-    },
-    {
-      "type": "Action.OpenUrl",
-      "title": "View Doctor list",
-      "url": "https://stackoverflow.com/questions/tagged/botframework"
-    }
+    //{
+    //  "type": "TextBlock",
+    //  "spacing": "medium",
+    //  "size": "default",
+    //  "weight": "bolder",
+    //  "text": "What would you like me to help you with today?",
+    //  "wrap": true,
+    //  "maxLines": 0
+    //}
   ]
 }

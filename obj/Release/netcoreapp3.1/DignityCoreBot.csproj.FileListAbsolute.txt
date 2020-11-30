@@ -64,4 +64,4 @@ C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\obj\Release\ne
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\obj\Release\netcoreapp3.1\DignityCoreBot.dll
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\obj\Release\netcoreapp3.1\DignityCoreBot.pdb
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\obj\Release\netcoreapp3.1\DignityCoreBot.genruntimeconfig.cache
-C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\bin\Release\netcoreapp3.1\Properties\ServiceDependencies\DignityCoreBot20201124151829 - Web Deploy\profile.arm.json
+C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\bin\Release\netcoreapp3.1\Properties\ServiceDependencies\DignityCoreBot - Web Deploy\profile.arm.json

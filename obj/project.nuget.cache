@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "wtD8Z//oY4rmUfs8ezqPFRDJSSD13vIiA7ThrszuQiVwcskySAhyGvxparu4XwT+5cVufrOq4dWqqLCPtf5eww==",
+  "dgSpecHash": "ZQU6zmWp3FT5bIKc57kM5VRlEQkDLtCzG0xzYs3UXRCN6b+HZYu5EK5DevWS1WWz+d4M1unNgjjEXjf59LUarQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\vivek.gopalan\\source\\repos\\DignityCoreBot\\DignityCoreBot\\DignityCoreBot.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\vivek.gopalan\\.nuget\\packages\\adaptivecards\\2.3.0\\adaptivecards.2.3.0.nupkg.sha512",
     "C:\\Users\\vivek.gopalan\\.nuget\\packages\\adaptiveexpressions\\4.11.1\\adaptiveexpressions.4.11.1.nupkg.sha512",
     "C:\\Users\\vivek.gopalan\\.nuget\\packages\\antlr4.runtime.standard\\4.8.0\\antlr4.runtime.standard.4.8.0.nupkg.sha512",
     "C:\\Users\\vivek.gopalan\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.1\\microsoft.aspnetcore.jsonpatch.3.1.1.nupkg.sha512",

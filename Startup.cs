@@ -35,10 +35,10 @@ namespace DignityCoreBot
             services.AddSingleton<ConversationState>();
 
             // Register LUIS recognizer
-            services.AddSingleton<FlightBookingRecognizer>();
+            //services.AddSingleton<FlightBookingRecognizer>();
 
             // Register the BookingDialog.
-            services.AddSingleton<BookingDialog>();
+            services.AddSingleton<UserSignInDialog>();
 
             // The MainDialog that will be run by the bot.
             services.AddSingleton<MainDialog>();

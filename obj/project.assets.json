@@ -2,6 +2,20 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "AdaptiveCards/2.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "Newtonsoft.Json": "11.0.2",
+          "System.Net.Http": "4.3.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/AdaptiveCards.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AdaptiveCards.dll": {}
+        }
+      },
       "AdaptiveExpressions/4.11.1": {
         "type": "package",
         "dependencies": {
@@ -2262,6 +2276,23 @@
     }
   },
   "libraries": {
+    "AdaptiveCards/2.3.0": {
+      "sha512": "2ktmMorFabw2Yx7IL93XqTRGkgSEaj5bqpu5KUXQvVZIuNZc+BdUd7+6RHDzE9JDDBdswxOLQ3mQ7xn28+7MSQ==",
+      "type": "package",
+      "path": "adaptivecards/2.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "adaptivecards.2.3.0.nupkg.sha512",
+        "adaptivecards.nuspec",
+        "lib/net452/AdaptiveCards.dll",
+        "lib/net452/AdaptiveCards.xml",
+        "lib/netstandard1.3/AdaptiveCards.dll",
+        "lib/netstandard1.3/AdaptiveCards.xml",
+        "lib/netstandard2.0/AdaptiveCards.dll",
+        "lib/netstandard2.0/AdaptiveCards.xml"
+      ]
+    },
     "AdaptiveExpressions/4.11.1": {
       "sha512": "ajiuMb/Ir9zLA9OKZFjwYBvXIxc9thGWyCu1tvUaRkEubCSxh9Gg77GCOtlYIXn2Tb7YAKukGV97J9Ak/Dn1mA==",
       "type": "package",
@@ -7424,6 +7455,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "AdaptiveCards >= 2.3.0",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 3.1.1",
       "Microsoft.Bot.Builder.AI.Luis >= 4.11.1",
       "Microsoft.Bot.Builder.Dialogs >= 4.11.1",
@@ -7468,6 +7500,10 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "AdaptiveCards": {
+            "target": "Package",
+            "version": "[2.3.0, )"
+          },
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
             "target": "Package",
             "version": "[3.1.1, )"

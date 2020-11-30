@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v3.1": {
       "DignityCoreBot/1.0.0": {
         "dependencies": {
+          "AdaptiveCards": "2.3.0",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "3.1.1",
           "Microsoft.Bot.Builder.AI.Luis": "4.11.1",
           "Microsoft.Bot.Builder.Dialogs": "4.11.1",
@@ -317,6 +318,22 @@
         },
         "compile": {
           "DignityCoreBot.dll": {}
+        }
+      },
+      "AdaptiveCards/2.3.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "Newtonsoft.Json": "12.0.3",
+          "System.Net.Http": "4.3.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AdaptiveCards.dll": {
+            "assemblyVersion": "2.3.0.0",
+            "fileVersion": "2.3.2010.29003"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/AdaptiveCards.dll": {}
         }
       },
       "AdaptiveExpressions/4.11.1": {
@@ -3537,6 +3554,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AdaptiveCards/2.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2ktmMorFabw2Yx7IL93XqTRGkgSEaj5bqpu5KUXQvVZIuNZc+BdUd7+6RHDzE9JDDBdswxOLQ3mQ7xn28+7MSQ==",
+      "path": "adaptivecards/2.3.0",
+      "hashPath": "adaptivecards.2.3.0.nupkg.sha512"
     },
     "AdaptiveExpressions/4.11.1": {
       "type": "package",

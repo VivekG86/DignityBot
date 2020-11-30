@@ -1,10 +1,10 @@
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\bin\Debug\netcoreapp3.1\appsettings.Development.json
-C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\bin\Debug\netcoreapp3.1\CognitiveModels\FlightBooking.json
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\bin\Debug\netcoreapp3.1\DeploymentTemplates\new-rg-parameters.json
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\bin\Debug\netcoreapp3.1\DeploymentTemplates\preexisting-rg-parameters.json
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\bin\Debug\netcoreapp3.1\DeploymentTemplates\template-with-new-rg.json
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\bin\Debug\netcoreapp3.1\DeploymentTemplates\template-with-preexisting-rg.json
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\DignityCoreBot - Web Deploy\profile.arm.json
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\bin\Debug\netcoreapp3.1\DignityCoreBot.exe
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\bin\Debug\netcoreapp3.1\DignityCoreBot.deps.json
@@ -51,12 +51,8 @@ C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\bin\Debug\netc
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netstandard1.3\System.Security.Cryptography.ProtectedData.dll
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard1.3\System.Security.Cryptography.ProtectedData.dll
-C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\obj\Debug\netcoreapp3.1\DignityCoreBot.csprojAssemblyReference.cache
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\obj\Debug\netcoreapp3.1\DignityCoreBot.AssemblyInfoInputs.cache
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\obj\Debug\netcoreapp3.1\DignityCoreBot.AssemblyInfo.cs
-C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\obj\Debug\netcoreapp3.1\DignityCoreBot.csproj.CoreCompileInputs.cache
-C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\obj\Debug\netcoreapp3.1\DignityCoreBot.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\obj\Debug\netcoreapp3.1\DignityCoreBot.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\obj\Debug\netcoreapp3.1\DignityCoreBot.RazorTargetAssemblyInfo.cache
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\obj\Debug\netcoreapp3.1\DignityCoreBot.csproj.CopyComplete
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\obj\Debug\netcoreapp3.1\staticwebassets\DignityCoreBot.StaticWebAssets.Manifest.cache
@@ -64,3 +60,8 @@ C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\obj\Debug\netc
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\obj\Debug\netcoreapp3.1\DignityCoreBot.dll
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\obj\Debug\netcoreapp3.1\DignityCoreBot.pdb
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\obj\Debug\netcoreapp3.1\DignityCoreBot.genruntimeconfig.cache
+C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\obj\Debug\netcoreapp3.1\DignityCoreBot.csprojAssemblyReference.cache
+C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\bin\Debug\netcoreapp3.1\AdaptiveCards.dll
+C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\obj\Debug\netcoreapp3.1\DignityCoreBot.csproj.CoreCompileInputs.cache
+C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\obj\Debug\netcoreapp3.1\DignityCoreBot.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\obj\Debug\netcoreapp3.1\DignityCoreBot.MvcApplicationPartsAssemblyInfo.cache

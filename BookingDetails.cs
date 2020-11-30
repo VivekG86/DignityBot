@@ -5,12 +5,10 @@
 
 namespace DignityCoreBot
 {
-    public class BookingDetails
+    public class UserDetails
     {
-        public string Destination { get; set; }
+        public string UserEmail { get; set; }
 
-        public string Origin { get; set; }
-
-        public string TravelDate { get; set; }
+        public string Password { get; set; }
     }
 }
