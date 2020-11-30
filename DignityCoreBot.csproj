@@ -17,13 +17,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="Cards\signInCard.json" />
+    <Content Remove="Cards\viewAppointments.json" />
     <Content Remove="Cards\welcomeCard - Copy.json" />
     <Content Remove="Cards\welcomeCard.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Cards\signInCard.json" />
+    <EmbeddedResource Include="Cards\viewAppointments.json" />
     <EmbeddedResource Include="Cards\welcomeCard.json" />
   </ItemGroup>
 

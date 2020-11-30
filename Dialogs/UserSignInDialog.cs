@@ -34,6 +34,7 @@ namespace DignityCoreBot.Dialogs
             AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
             {
                 UserSignInStepAsync,
+                UserSignInSuccessAsync
                 //DestinationStepAsync,
                 //OriginStepAsync,
                 //TravelDateStepAsync,
@@ -47,41 +48,58 @@ namespace DignityCoreBot.Dialogs
 
         private async Task<DialogTurnResult> UserSignInStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
-            var choices = new[] { "Sign-in" };
 
-            var card = new AdaptiveCard(new AdaptiveSchemaVersion(1, 0))
-            {
-                Body = { new AdaptiveTextBlock{Text = UserSignInMsgText,
-                    Size = AdaptiveTextSize.Default } },
-                Actions = choices.Select(choice => new AdaptiveSubmitAction
-                {
-                    Title = choice,
-                    Data = choice,  // This will be a string
-                }).ToList<AdaptiveAction>()
-
-
-            };
-
-            return await stepContext.PromptAsync(
-                nameof(TextPrompt),
-                new PromptOptions
-                {
-                    Prompt = (Activity)MessageFactory.Attachment(new Attachment
-                    {
-                        ContentType = AdaptiveCard.ContentType,
-                        // Convert the AdaptiveCard to a JObject
-                        Content = JObject.FromObject(card),
-                    }),
-                    Choices = ChoiceFactory.ToChoices(choices),
-                    // Don't render the choices outside the card
-                    Style = ListStyle.None,
-                },
-                cancellationToken);
-
-            //return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = promptMessage }, cancellationToken);
-
+            var signInMessage = MessageFactory.Text("Would you like to sign-in into your dignity health account?", null, InputHints.ExpectingInput);            
+            return await stepContext.PromptAsync(nameof(ConfirmPrompt), new PromptOptions { Prompt = signInMessage }, cancellationToken);
 
         }
+
+        private async Task<DialogTurnResult> UserSignInSuccessAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+        {
+
+            var signInMessage = MessageFactory.Text("User sign-in successful into dignity health", null, InputHints.IgnoringInput);
+            return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = signInMessage }, cancellationToken);
+
+        }
+
+
+        //private async Task<DialogTurnResult> UserSignInStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+        //{
+        //    var choices = new[] { "Sign-in" };
+
+        //    var card = new AdaptiveCard(new AdaptiveSchemaVersion(1, 0))
+        //    {
+        //        Body = { new AdaptiveTextBlock{Text = UserSignInMsgText,
+        //            Size = AdaptiveTextSize.Default } },
+        //        Actions = { new AdaptiveOpenUrlAction
+        //        {
+        //            Title = "Sign-In",
+        //            Url = new Uri("https://slot1.dev.dignityhealth.org/login")
+        //        } }
+
+
+        //    };
+
+        //    return await stepContext.PromptAsync(
+        //        nameof(TextPrompt),
+        //        new PromptOptions
+        //        {
+        //            Prompt = (Activity)MessageFactory.Attachment(new Attachment
+        //            {
+        //                ContentType = AdaptiveCard.ContentType,
+        //                // Convert the AdaptiveCard to a JObject
+        //                Content = JObject.FromObject(card),
+        //            }),
+        //            //Choices = ChoiceFactory.ToChoices(choices),
+        //            // Don't render the choices outside the card
+        //            Style = ListStyle.None,
+        //        },
+        //        cancellationToken);
+
+        //    //return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = promptMessage }, cancellationToken);
+
+
+        //}
 
         //private async Task<DialogTurnResult> DestinationStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         //{
