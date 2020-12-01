@@ -1,0 +1,41 @@
+{
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "TextBlock",
+      "size": "ExtraLarge",
+      "weight": "Bolder",
+      "text": "Login in to Dignity Health"
+    },
+    {
+      "type": "Input.Text",
+      "placeholder": "Enter the dignity user name",
+      "$data": "${$root}",
+      "$when": "${$root}",
+      "label": "Email:",
+      "isRequired": true,
+      "inlineAction": {
+        "type": "Action.Submit"
+      },
+      "errorMessage": "Please enter a valid user name",
+      "style": "Email",
+      "id": "email"
+    },
+    {
+      "type": "Input.Text",
+      "placeholder": "Placeholder text",
+      "label": "Password:",
+      "isRequired": true,
+      "errorMessage": "Please enter the password",
+      "id": "password"
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Submit"
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.3"
+}

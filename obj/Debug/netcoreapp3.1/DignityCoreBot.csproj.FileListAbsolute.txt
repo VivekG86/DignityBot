@@ -65,3 +65,4 @@ C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\bin\Debug\netc
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\obj\Debug\netcoreapp3.1\DignityCoreBot.csproj.CoreCompileInputs.cache
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\obj\Debug\netcoreapp3.1\DignityCoreBot.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\obj\Debug\netcoreapp3.1\DignityCoreBot.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\vivek.gopalan\source\repos\DignityCoreBot\DignityCoreBot\bin\Debug\netcoreapp3.1\Cards\signInCard.json

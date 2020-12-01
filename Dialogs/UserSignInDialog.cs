@@ -23,7 +23,7 @@ namespace DignityCoreBot.Dialogs
     public class UserSignInDialog : CancelAndHelpDialog
     {
         private const string UserSignInMsgText = "Could you please sign-in into your dignity health account?";
-        
+
 
         public UserSignInDialog()
             : base(nameof(UserSignInDialog))
@@ -34,8 +34,8 @@ namespace DignityCoreBot.Dialogs
             AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
             {
                 UserSignInStepAsync,
-                UserSignInSuccessAsync
-                //DestinationStepAsync,
+                UserSignInValidationAsync,
+                DestinationStepAsync,
                 //OriginStepAsync,
                 //TravelDateStepAsync,
                 //ConfirmStepAsync,
@@ -46,40 +46,140 @@ namespace DignityCoreBot.Dialogs
             InitialDialogId = nameof(WaterfallDialog);
         }
 
+        //private async Task<DialogTurnResult> UserSignInStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+        //{
+
+        //    var signInMessage = MessageFactory.Text("Would you like to sign-in into your dignity health account?", null, InputHints.ExpectingInput);            
+        //    return await stepContext.PromptAsync(nameof(ConfirmPrompt), new PromptOptions { Prompt = signInMessage }, cancellationToken);
+
+        //}
+
         private async Task<DialogTurnResult> UserSignInStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
+            var choices = new[] { "Sign-in" };
 
-            var signInMessage = MessageFactory.Text("Would you like to sign-in into your dignity health account?", null, InputHints.ExpectingInput);            
-            return await stepContext.PromptAsync(nameof(ConfirmPrompt), new PromptOptions { Prompt = signInMessage }, cancellationToken);
+            var card = new AdaptiveCard(new AdaptiveSchemaVersion(1, 0))
+            {
+                Body = {
+                    new AdaptiveTextBlock
+                    {
+                        Text = "Login in to Dignity Health",
+                        Size = AdaptiveTextSize.ExtraLarge,
+                        Color = AdaptiveTextColor.Good
+                    },
+                    new AdaptiveTextBlock
+                    {
+                        Text = "Email:",
+                        Wrap = true
+                    },
+                    new AdaptiveTextInput
+                    {
+                        //IsRequired = true,
+                       // ErrorMessage = "Please enter a valid email",
+                        Id = "Email",
+                        Value = "sample"
+                        //Style = AdaptiveTextInputStyle.Email
+                       // Style = AdaptiveTextInputStyle.Text
+                    },
+                    new AdaptiveTextBlock
+                    {
+                        Text = "Password:",
+                        Wrap = true
+                    },
+                    new AdaptiveTextInput
+                    {
+                        //IsRequired = true,
+                        //ErrorMessage = "Please provide a valid input",
+                        Id = "Password",
+                        Value = "sample"
+                        //Style = AdaptiveTextInputStyle.Text
+                    }
+                },
+                Actions = {
+                    new AdaptiveSubmitAction
+                    {
+                        Title = "Submit",
+                        Style = "Positive",
+                        Data = "Submit"
+                    }
+                }
+            };
+
+            return await stepContext.PromptAsync(
+                nameof(TextPrompt),
+                new PromptOptions
+                {
+                    Prompt = (Activity)MessageFactory.Attachment(new Attachment
+                    {
+                        ContentType = AdaptiveCard.ContentType,
+                        // Convert the AdaptiveCard to a JObject
+                        Content = JObject.FromObject(card),
+                    }),
+                    //Choices = ChoiceFactory.ToChoices(choices),
+                    // Don't render the choices outside the card
+                    Style = ListStyle.None,
+                },
+                cancellationToken);
+
+            //return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = promptMessage }, cancellationToken);
+
 
         }
 
-        private async Task<DialogTurnResult> UserSignInSuccessAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+        private async Task<DialogTurnResult> UserSignInValidationAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
-
-            var signInMessage = MessageFactory.Text("User sign-in successful into dignity health", null, InputHints.IgnoringInput);
+            var userDetails = (UserDetails)stepContext.Options;
+            var signInMessage = MessageFactory.Text("Please wait while we validate your credentials... ", null, InputHints.IgnoringInput);
             return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = signInMessage }, cancellationToken);
 
         }
 
 
         //private async Task<DialogTurnResult> UserSignInStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
-        //{
-        //    var choices = new[] { "Sign-in" };
+        //{           
 
+        //    var choices = new[] { "Submit", "Cancel" };
+        //    // Create card
         //    var card = new AdaptiveCard(new AdaptiveSchemaVersion(1, 0))
         //    {
-        //        Body = { new AdaptiveTextBlock{Text = UserSignInMsgText,
-        //            Size = AdaptiveTextSize.Default } },
-        //        Actions = { new AdaptiveOpenUrlAction
+        //        // Use LINQ to turn the choices into submit actions
+        //        Body =
         //        {
-        //            Title = "Sign-In",
-        //            Url = new Uri("https://slot1.dev.dignityhealth.org/login")
-        //        } }
-
-
+        //            new AdaptiveTextBlock
+        //            {
+        //                Text = UserSignInMsgText,
+        //                Size = AdaptiveTextSize.Default
+        //            },
+        //            //new AdaptiveTextBlock
+        //            //{
+        //            //    Text = "Email:"                       
+        //            //},
+        //            new AdaptiveTextInput
+        //            {
+                        
+        //                Type = 
+                        
+                       
+        //            },
+        //            //new AdaptiveTextBlock
+        //            //{
+        //            //    Text = "Password:",
+        //            //    Wrap = true
+        //            //},
+        //            //new AdaptiveTextInput
+        //            //{
+        //            //    Id = "Password",
+        //            //    Style = AdaptiveTextInputStyle.Text
+        //            //}
+        //        },
+        //        Actions = choices.Select(choice => new AdaptiveOpenUrlAction
+        //        {
+        //            Title = choice,
+        //            Data = choice,  // This will be a string
+        //        }).ToList<AdaptiveAction>(),
         //    };
 
+        //    // Prompt
         //    return await stepContext.PromptAsync(
         //        nameof(TextPrompt),
         //        new PromptOptions
@@ -90,29 +190,31 @@ namespace DignityCoreBot.Dialogs
         //                // Convert the AdaptiveCard to a JObject
         //                Content = JObject.FromObject(card),
         //            }),
-        //            //Choices = ChoiceFactory.ToChoices(choices),
+        //            Choices = ChoiceFactory.ToChoices(choices),
         //            // Don't render the choices outside the card
         //            Style = ListStyle.None,
         //        },
         //        cancellationToken);
+
+           
 
         //    //return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = promptMessage }, cancellationToken);
 
 
         //}
 
-        //private async Task<DialogTurnResult> DestinationStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
-        //{
-        //    var bookingDetails = (BookingDetails)stepContext.Options;
+        private async Task<DialogTurnResult> DestinationStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+        {
+            var userDetails = (UserDetails)stepContext.Options;
 
-        //    if (bookingDetails.Destination == null)
-        //    {
-        //        var promptMessage = MessageFactory.Text(DestinationStepMsgText, DestinationStepMsgText, InputHints.ExpectingInput);
-        //        return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = promptMessage }, cancellationToken);
-        //    }
+            if (userDetails.Email == null)
+            {
+                var promptMessage = MessageFactory.Text("Hello", "Hello", InputHints.ExpectingInput);
+                return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = promptMessage }, cancellationToken);
+            }
 
-        //    return await stepContext.NextAsync(bookingDetails.Destination, cancellationToken);
-        //}
+            return await stepContext.NextAsync(userDetails.Email, cancellationToken);
+        }
 
         //private async Task<DialogTurnResult> OriginStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         //{
